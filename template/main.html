@@ -1,0 +1,134 @@
+<!-- 
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Main Page</title>
+</head>
+<body>
+   
+    
+
+<br>
+
+<div class="text-center">
+
+<h1>Expense Tracking</h1>
+
+<h5>Keep track of your records effectively</h5>
+<hr><br>
+
+<a class="btn-btn-primary" type="button" href="{% url 'register' %}">Create Your Account
+<i class="fa-solid fa-user-plus"></i></a>
+<br><br>
+<p>Already Register!!!</p>
+<a type="button" class="btn btn-primary m-100 btn-block btn-info" href="{% url 'login' %}">Log In<i class="fa-solid fa-user-plus"></i></a>
+</div>
+
+
+
+</body>
+</html>   -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .text-center {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 1px solid #e0e0e0;
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-info {
+            background-color: #1abc9c;
+            border: none;
+        }
+
+        .btn-info:hover {
+            background-color: #16a085;
+        }
+
+        p {
+            margin: 15px 0 5px;
+            color: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <div class="text-center">
+        <h1>Expense Tracking</h1>
+        <h5>Keep track of your records effectively</h5>
+        <hr><br>
+
+        <a class="btn btn-primary" type="button" href="{% url 'register' %}">Create Your Account
+            <i class="fa-solid fa-user-plus"></i>
+        </a>
+        <br><br>
+        <p>Already Registered?</p>
+        <a type="button" class="btn btn-info btn-block" href="{% url 'login' %}">Log In
+            <i class="fa-solid fa-user-plus"></i>
+        </a>
+    </div>
+
+    
+</body>
+
+</html>

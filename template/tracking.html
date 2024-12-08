@@ -1,0 +1,184 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% block content %}
+<body>
+    <h1>Welocme {{user}}</h1><hr>
+    <h2><button><a href="{% url 'addrecord' %}">s</a></button></h2>
+
+    <table class="table table-hover table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th scope="col" >No.</th>
+                <th scope="col" >Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Note</th>
+                
+                <th scope="col">Date</th>
+                
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        
+    {% if trc %}
+       {% for i in trc %}
+       <tr>
+           <td >{{i.id}}</td>
+           <td>{{i.first_name}}</td>
+           <td>{{i.category}}</td>
+           <td>{{i.amount}}</td>
+           <td>{{i.note}}</td>
+           <td>{{i.add_date}}</td>
+           <th scope="col"><button><a href="{% url 'updaterecord' i.id %}">update</a></button></th>
+           <th scope="col"><button><a href="{% url 'deleterecord' i.id %}">delete</a></button></th>
+           
+           
+           
+       </tr>
+       
+  
+     
+
+       {% endfor %}
+       {% endif %}
+    </thead>
+</table>
+</body>
+
+{% endblock %}
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h2 button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        h2 button:hover {
+            background-color: #2980b9;
+        }
+
+        h2 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome {{user}}</h1>
+    <hr>
+    <h2><button><a href="{% url 'addrecord'   %}">Add Record</a></button></h2>
+
+    <table class="table table-hover table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Note</th>
+                <th scope="col">Date</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if trc %}
+                {% for i in trc %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.first_name}}</td>
+                    <td>{{i.category}}</td>
+                    <td>{{i.amount}}</td>
+                    <td>{{i.note}}</td>
+                    <td>{{i.add_date}}</td>
+                    <td><button><a href="{% url 'updaterecord' i.id %}">Update</a></button></td>
+                    <td><button><a href="{% url 'deleterecord' i.id %}">Delete</a></button></td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    <br><br>
+    <Right><h2><button><a href="{% url 'logout'   %}">Log Out</a></button></h2></Right>
+</body>
+
+</html>

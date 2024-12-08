@@ -1,0 +1,177 @@
+<!-- 
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+</head>
+
+
+
+{% block content %}
+
+<body>
+  {% for message in messages %}
+    <div class="message {{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
+  <div class="container bg-light shadow-md p-5 form-layout">
+  <h1> Log in To Your Account</h1>
+  <hr><br>
+  <form method="POST" autocomplete="off">
+  {% csrf_token %}
+ 
+  {{form.username | as_crispy_field }}
+  <br>
+  {{form.password | as_crispy_field }}
+  <br>
+  
+   <br>
+  <button type="submit" class="btn btn-info w-40 btn-block p-2">log in<i class="fa fa-user-plus" aria-hidden="true"></i> </button>
+
+<div class="text-left">
+ <a href="{% url 'register' %}"> <p>Don't have an account??</p></a>
+</div>
+</form>
+  </div>
+
+</body>
+
+{% endblock %}
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  -->
+  {% load crispy_forms_tags %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f9;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+      }
+  
+      .container {
+          background-color: #ffffff;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          max-width: 500px;
+          width: 90%;
+          margin: 20px auto;
+          text-align: center;
+      }
+  
+      h1 {
+          font-size: 24px;
+          color: #2c3e50;
+          margin-bottom: 20px;
+      }
+  
+      hr {
+          border: 1px solid #ddd;
+          margin: 20px 0;
+      }
+  
+      .btn {
+          display: inline-block;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          color: #fff;
+          background-color: #1abc9c;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          width: 100%;
+      }
+  
+      .btn:hover {
+          background-color: #16a085;
+      }
+  
+      .text-left p {
+          color: #34495e;
+          font-size: 14px;
+          margin-top: 15px;
+          text-align: left;
+      }
+  
+      .message {
+          padding: 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          font-size: 14px;
+      }
+  
+      .message.success {
+          background-color: #d4edda;
+          color: #155724;
+          border: 1px solid #c3e6cb;
+      }
+  
+      .message.error {
+          background-color: #f8d7da;
+          color: #721c24;
+          border: 1px solid #f5c6cb;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% for message in messages %}
+      <div class="message {{ message.tags }}">
+          {{ message }}
+      </div>
+    {% endfor %}
+    <div class="container">
+      <h1>Log in To Your Account</h1>
+      <hr>
+      <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{form.username | as_crispy_field }}
+        <br>
+        {{form.password | as_crispy_field }}
+        <br><br>
+        <button type="submit" class="btn">Log in <i class="fa fa-user-plus" aria-hidden="true"></i></button>
+        <div class="text-left">
+          <a href="{% url 'register' %}">
+            <p>Don't have an account?</p>
+          </a>
+        </div>
+      </form>
+    </div>
+  </body>
+  
+  </html>
+  

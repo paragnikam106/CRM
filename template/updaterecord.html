@@ -1,0 +1,139 @@
+<!-- 
+
+{% block content %}
+
+
+<body>
+
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+      <br>
+      <h2>Update Expenses</h2>
+      <h5>Update Your Expenses</h5><hr><br>
+
+      <form method="POST" autocomplete="off">
+
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit" class="btn btn-info">Update Record &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></button>
+        &nbsp;
+
+        <a href="{% url 'tracking' %}" class="btn btn-secondary">Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+
+      </form>
+    </div>
+</body>
+
+
+
+
+{% endblock %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Expenses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-info {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-info:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #7f8c8d;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #606f7b;
+        }
+
+        .form-layout {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        <br>
+        <h2>Update Expenses</h2>
+        <h5>Update Your Expenses</h5>
+        <hr><br>
+
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button type="submit" class="btn btn-info">Update Record &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></button>
+            &nbsp;
+            <a href="{% url 'tracking' %}" class="btn btn-secondary">Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        </form>
+    </div>
+</body>
+
+</html>

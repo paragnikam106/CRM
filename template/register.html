@@ -1,0 +1,167 @@
+<!-- 
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% block content %}
+<body>
+    
+    <div class="container bg-light shadow-md p5 form-layout">
+        <h3>Create Your Account</h3>
+        <h5>Start Managing Your Clients</h5><br><hr>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            
+             {{form.username | as_crispy_field }}
+             <br>
+             {{form.password1 | as_crispy_field }}
+             <br>
+             {{form.password2 | as_crispy_field }}
+
+            
+            <br><br>
+            <button type="submit" class="btn-btn-primary m-100 btn-block" >Create Account &nbsp;
+                <i class="fa-solid fa-user-plus"></i>
+            </button>
+            
+        
+        <br>
+        
+        <br><center><a type="button" class="btn btn-primary m-100 btn-block btn-info" href="{% url 'login' %}">Log In<i class="fa-solid fa-user-plus"></i></a>
+        </center><br>
+        </form>
+    </div>
+
+
+   
+</body>
+{% endblock %}
+</html> -->
+
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 1px solid #e0e0e0;
+            margin: 20px 0;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-info {
+            background-color: #1abc9c;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-info:hover {
+            background-color: #16a085;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Create Your Account</h3>
+        <h5>Start Managing Your Clients</h5>
+        <br>
+        <hr>
+
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{form.username | as_crispy_field }}
+            <br>
+            {{form.password1 | as_crispy_field }}
+            <br>
+            {{form.password2 | as_crispy_field }}
+            <br><br>
+            <button type="submit">Create Account &nbsp;
+                <i class="fa-solid fa-user-plus"></i>
+            </button>
+            <br><br>
+            <center>
+                <a type="button" class="btn-info" href="{% url 'login' %}">Log In
+                    <i class="fa-solid fa-user-plus"></i>
+                </a>
+            </center>
+        </form>
+    </div>
+</body>
+
+</html>

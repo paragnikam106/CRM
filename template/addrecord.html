@@ -1,0 +1,143 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% block content %}
+<body>
+    
+    <div class="container bg-light shadow-md p-5">
+        <h1>
+            Create Employee Record
+        </h1>
+        <h5>
+            start Adding Your Details
+        </h5>
+        <hr>
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br><br>
+
+        <button type="submit" class="btn-btn-primary" >submit record &nbsp; <i class="fa fa-check " area-hidden="true"></i></button>
+        <a href="{% url 'tracking' %}" class="btn-btn-secondary">Return &nbsp;<i class="fa fa-check " area-hidden="true"></i></a>
+    </form> 
+    </div>
+</body>
+{% endblock %}
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 1px solid #e0e0e0;
+            margin: 20px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button, .btn-btn-secondary {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-btn-primary {
+            background-color: #3498db;
+            color: white;
+            border: none;
+        }
+
+        .btn-btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-btn-secondary {
+            background-color: #7f8c8d;
+            color: white;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-btn-secondary:hover {
+            background-color: #606f7b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-light shadow-md p-5">
+        <h1>
+            Create Employee Record
+        </h1>
+        <h5>
+            Start Adding Your Details
+        </h5>
+        <hr>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{form.as_p}}
+            <br><br>
+
+            <button type="submit" class="btn-btn-primary">
+                Submit Record &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <a href="{% url 'tracking' %}" class="btn-btn-secondary">
+                Return &nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+        </form> 
+    </div>
+</body>
+
+</html>
